@@ -5,8 +5,8 @@
 ###### modèle utilisé pour détecter les parkings
 
 output_path: /content/flair_fnau/output/image_detect/
-output_name: test_cosia_fnau.tif
-input_img_path: "/content/flair_fnau/data/parking/subset.tif"
+output_name: cosia_2010.tif
+input_img_path: "/content/flair_fnau/input/ortho_2010_subset.tif"
 channels: [1, 2, 3]
 
 img_pixels_detection: 512

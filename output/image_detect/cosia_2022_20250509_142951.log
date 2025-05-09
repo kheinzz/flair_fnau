@@ -1,0 +1,37 @@
+    [LOGGER] Writing logs to: /content/flair_fnau/output/image_detect/cosia_2022_20250509_142951.log
+
+    ##############################################
+    ZONE DETECTION
+    ##############################################
+
+    CUDA available? True
+
+    |- output path: /content/flair_fnau/output/image_detect/
+    |- output raster name: cosia_2022
+
+    |- input image path: /content/flair_fnau/input/ortho_2022_subset.tif
+    |- channels: [1, 2, 3]
+    |- input image WxH: (3981, 2875)   
+    |- resolution: (0.2, 0.2)
+    |- image size for detection: 512
+    |- overlap margin: 128
+    |- write dataframe: False
+    |- number of classes: 19
+    |- normalization: custom
+    |- output type: argmax
+
+    |- model weights path: /content/flair_fnau/model/FLAIR-INC_rgb_15cl_resnet34-unet_weights.pth
+    |- model template: SegmentationModelsPytorch - resnet34_unet
+    |- device: cuda
+    |- batch size: 6
+
+    
+    [x] sliced input raster to 192 squares...
+    [x] loaded model and weights...
+    [ ] starting inference...
+
+  0%|          | 0/32 [00:00<?, ?it/s]  3%|▎         | 1/32 [00:00<00:15,  1.94it/s]  6%|▋         | 2/32 [00:00<00:12,  2.47it/s]  9%|▉         | 3/32 [00:01<00:10,  2.78it/s] 12%|█▎        | 4/32 [00:01<00:09,  2.98it/s] 16%|█▌        | 5/32 [00:01<00:08,  3.12it/s] 19%|█▉        | 6/32 [00:02<00:07,  3.28it/s] 22%|██▏       | 7/32 [00:02<00:07,  3.38it/s] 25%|██▌       | 8/32 [00:02<00:06,  3.46it/s] 28%|██▊       | 9/32 [00:02<00:06,  3.50it/s] 31%|███▏      | 10/32 [00:03<00:06,  3.53it/s] 34%|███▍      | 11/32 [00:03<00:06,  3.38it/s] 38%|███▊      | 12/32 [00:03<00:06,  3.22it/s] 41%|████      | 13/32 [00:04<00:06,  3.11it/s] 44%|████▍     | 14/32 [00:04<00:05,  3.01it/s] 47%|████▋     | 15/32 [00:04<00:05,  2.95it/s] 50%|█████     | 16/32 [00:05<00:05,  2.91it/s] 53%|█████▎    | 17/32 [00:05<00:05,  2.89it/s] 56%|█████▋    | 18/32 [00:05<00:04,  2.94it/s] 59%|█████▉    | 19/32 [00:06<00:04,  3.10it/s] 62%|██████▎   | 20/32 [00:06<00:03,  3.24it/s] 66%|██████▌   | 21/32 [00:06<00:03,  3.36it/s] 69%|██████▉   | 22/32 [00:06<00:02,  3.44it/s] 72%|███████▏  | 23/32 [00:07<00:02,  3.49it/s] 75%|███████▌  | 24/32 [00:07<00:02,  3.55it/s] 78%|███████▊  | 25/32 [00:07<00:01,  3.58it/s] 81%|████████▏ | 26/32 [00:08<00:01,  3.60it/s] 84%|████████▍ | 27/32 [00:08<00:01,  3.58it/s] 88%|████████▊ | 28/32 [00:08<00:01,  3.60it/s] 91%|█████████ | 29/32 [00:08<00:00,  3.60it/s] 94%|█████████▍| 30/32 [00:09<00:00,  3.54it/s] 97%|█████████▋| 31/32 [00:09<00:00,  3.58it/s]100%|██████████| 32/32 [00:09<00:00,  3.62it/s]100%|██████████| 32/32 [00:09<00:00,  3.28it/s]
+    
+                        
+    [X] done writing to cosia_2022.tif raster file.
+
