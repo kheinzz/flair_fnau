@@ -1,0 +1,3 @@
+# Ignorer les fichiers images et logs
+*.tif
+*.log
