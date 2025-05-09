@@ -1,0 +1,79 @@
+#### DATA PATHS
+paths:
+  out_folder: C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main/output
+  out_model_name: parking
+
+  ######## TRAIN NEEDED
+  train_csv: "C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main/data/parking/dataset2/train.csv"
+  val_csv: "C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main/data/parking/dataset2/val.csv"
+  ######## PREDICT (PATCH) NEEDED
+  test_csv: "C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main/data/parking/dataset2/test.csv"
+  # ckpt_model_path: "C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main/model/FLAIR-INC_rgb_15cl_resnet34-unet_weights.pth"
+
+  #path_metadata_aerial: '../flair_aerial_metadata.json'
+
+#### USAGE
+tasks:
+  train: True
+  train_tasks:
+    init_weights_only_from_ckpt: False
+    resume_training_from_ckpt: False
+
+  predict: False
+
+  metrics: True
+  delete_preds: False
+
+#### TRAINING CONF
+model_framework:
+  model_provider: SegmentationModelsPytorch # HuggingFace or SegmentationModelsPytorch
+
+  HuggingFace:
+    org_model:
+
+  SegmentationModelsPytorch:
+    encoder_decoder: resnet34_unet
+
+use_augmentation: True
+use_metadata: False # Can be True if FLAIR dataset and SegmentationModelsPytorch model_provider
+
+channels: [1, 2, 3] # starts at 1
+norm_type: custom # [scaling, custom, without], default: scaling to range [0,1], see github readme
+norm_means: [105.08, 110.87, 101.82]
+norm_stds: [52.17, 45.38, 44]
+
+seed: 2022
+
+#### HYPERPARAMETERS
+batch_size: 15
+learning_rate: 0.001
+num_epochs: 10
+
+#### DATA CONF
+use_weights: True
+classes: # k = value in MSK : v = [weight, name]
+  1: [1, "parking"]
+  2: [1, "other"]
+
+#### PREDICT CONF
+georeferencing_output: True
+
+#### COMPUTATIONAL RESSOURCES
+accelerator: gpu # or cpu
+num_nodes: 1
+gpus_per_node: 1
+strategy: "auto" # null if only one GPU, else 'ddp'
+num_workers: 8
+
+#### CKPT OPTIONS
+ckpt_save_also_last: True
+ckpt_verbose: True
+ckpt_weights_only: False
+ckpt_monitor: val_loss
+ckpt_monitor_mode: max
+ckpt_earlystopping_patience: 30
+
+#### PRINT PROGRESS
+cp_csv_and_conf_to_output: True
+enable_progress_bar: True
+progress_rate: 10

@@ -1,0 +1,35 @@
+### à utiliser avec l'environnement "FLAIR-INC_cuda"
+### ici : C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main
+### commande : flair-detect --conf=configs/flair-1-config-detect.yaml
+
+###### modèle utilisé pour détecter les parkings
+
+output_path: C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/data/parking/output
+output_name: test_cosia_fnau.tif
+## Test image "C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main/data/parking/dataset/train/images/tile_0008.tif"
+input_img_path: "C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/data/parking/subset.tif"#"C:/_GLOBAL/TRAVAIL/OCS/cosia/31-2022-0570-6280-LA93-0M20-E080.jp2" #C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main/data/parking/31-2022-0570-6280-LA93-0M20-E080.jp2
+channels: [1, 2, 3]
+
+img_pixels_detection: 512
+margin: 128
+output_type: "argmax"
+n_classes: 19
+
+model_weights: "C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/model/FLAIR-INC_rgb_15cl_resnet34-unet_weights.pth"
+model_framework:
+  model_provider: SegmentationModelsPytorch
+  HuggingFace:
+    org_model:
+  SegmentationModelsPytorch:
+    encoder_decoder: resnet34_unet
+
+batch_size: 6
+use_gpu: true
+num_worker: 0
+
+write_dataframe: False
+
+norma_task:
+  - norm_type: custom
+    norm_means: [105.08, 110.87, 101.82]
+    norm_stds: [52.17, 45.38, 44]
