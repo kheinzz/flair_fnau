@@ -4,10 +4,9 @@
 
 ###### modèle utilisé pour détecter les parkings
 
-output_path: C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/data/parking/output
-output_name: test_fnau.tif
-## Test image "C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main/data/parking/dataset/train/images/tile_0008.tif"
-input_img_path: "C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/data/parking/subset.tif"#"C:/_GLOBAL/TRAVAIL/OCS/cosia/31-2022-0570-6280-LA93-0M20-E080.jp2" #C:/_GLOBAL/TRAVAIL/OCS/cosia/FLAIR-1-main/FLAIR-1-main/data/parking/31-2022-0570-6280-LA93-0M20-E080.jp2
+output_path: /content/flair_fnau/output/image_detect
+output_name: parking_2022.tif
+input_img_path: "/content/flair_fnau/input/ortho_2022_subset.tif"
 channels: [1, 2, 3]
 
 img_pixels_detection: 512
@@ -15,7 +14,7 @@ margin: 128
 output_type: "argmax"
 n_classes: 2
 
-model_weights: "C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/output/parking/checkpoints/ckpt-epoch=49-val_loss=0.09_parking.ckpt"
+model_weights: "/content/flair_fnau/output/parking/checkpoints/ckpt-epoch=49-val_loss=0.09_parking.ckpt"
 model_framework:
   model_provider: SegmentationModelsPytorch
   HuggingFace:
