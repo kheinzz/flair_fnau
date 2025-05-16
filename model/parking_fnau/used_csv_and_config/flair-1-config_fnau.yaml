@@ -5,17 +5,21 @@
 
 #### DATA PATHS
 paths:
-  out_folder: /content/flair_fnau/model/
+  out_folder: C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/model/
   out_model_name: parking_fnau
-
-
-  train_csv: "/content/flair_fnau/output/train_dataset/train.csv"
-  val_csv: "/content/flair_fnau/output/train_dataset/val.csv"
+  #"C:\_GLOBAL\TRAVAIL\OCS\cosia_fnau\FLAIR-1-main\FLAIR-1-main\output\train_dataset\train.csv"
+  train_csv: "C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/output/train_dataset/train.csv"
+  val_csv: "C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/output/train_dataset/val.csv"
   ######## PREDICT (PATCH) NEEDED
-  test_csv: "/content/flair_fnau/output/train_dataset/test.csv"
+  test_csv: "C:/_GLOBAL/TRAVAIL/OCS/cosia_fnau/FLAIR-1-main/FLAIR-1-main/output/train_dataset/test.csv"
+
+  # train_csv: "/content/flair_fnau/output/train_dataset/train.csv"
+  # val_csv: "/content/flair_fnau/output/train_dataset/val.csv"
+  # ######## PREDICT (PATCH) NEEDED
+  # test_csv: "/content/flair_fnau/output/train_dataset/test.csv"
   ######## TRAIN NEEDED
-#  train_csv: "/content/flair_fnau/output/train_dataset/train.csv"
- # val_csv: "/content/flair_fnau/output/train_dataset/val.csv"
+  #  train_csv: "/content/flair_fnau/output/train_dataset/train.csv"
+  # val_csv: "/content/flair_fnau/output/train_dataset/val.csv"
   ######## PREDICT (PATCH) NEEDED
   #test_csv: "/content/flair_fnau/output/train_dataset/test.csv"
   ckpt_model_path: "/content/flair_fnau/model/FLAIR-INC_rgb_15cl_resnet34-unet_weights.pth"
